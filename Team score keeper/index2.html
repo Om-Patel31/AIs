@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Score Tracker</title>
+</head>
+<body>
+
+<label for="teama">Enter the name of team 1:</label>
+<input type="text" id="teama">
+
+<label for="teamb">Enter the name of team 2:</label>
+<input type="text" id="teamb">
+
+<button onclick="addToTeam('team1')">Add to Team 1</button>
+<button onclick="addToTeam('team2')">Add to Team 2</button>
+
+<p id="points-label">Press the 'Add Point' button or say 'Add point to team one' or 'Add point to team two'</p>
+
+<script>
+    let team1Points = 0;
+    let team2Points = 0;
+
+    function addToTeam(team) {
+        if (team === 'team1') {
+            team1Points++;
+        } else if (team === 'team2') {
+            team2Points++;
+        }
+        updatePointsLabel();
+    }
+
+    function updatePointsLabel() {
+        const teamAName = document.getElementById("teama").value;
+        const teamBName = document.getElementById("teamb").value;
+        const pointsLabel = document.getElementById("points-label");
+        pointsLabel.textContent = `Team ${teamAName} has ${team1Points} points. Team ${teamBName} has ${team2Points} points.`;
+        speakPoints();
+    }
+
+    function speakPoints() {
+        const teamAName = document.getElementById("teama").value;
+        const teamBName = document.getElementById("teamb").value;
+        const message = `Team ${teamAName} has ${team1Points} points. Team ${teamBName} has ${team2Points} points.`;
+        // Text-to-speech functionality can be added here using appropriate libraries or APIs.
+    }
+</script>
+
+</body>
+</html>
