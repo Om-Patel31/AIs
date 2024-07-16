@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Score Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Team Score Tracker</h1>
+    <div class="team-info">
+      <label for="team1">Enter the name of team 1:</label>
+      <input type="text" id="team1" placeholder="Team 1">
+    </div>
+    <div class="team-info">
+      <label for="team2">Enter the name of team 2:</label>
+      <input type="text" id="team2" placeholder="Team 2">
+    </div>
+    <div class="buttons">
+      <button onclick="addToTeam('team1')">Add to Team 1</button>
+      <button onclick="addToTeam('team2')">Add to Team 2</button>
+    </div>
+    <p id="points-label">Press the buttons above to add points to the teams.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>  
